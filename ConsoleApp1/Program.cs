@@ -1,7 +1,11 @@
-﻿// Alireza Khosravi
+﻿using System.Diagnostics;
+
+// Alireza Khosravi
 // Mohsen Mohammadi
 // Mohammad Ashrafi
-using System.Diagnostics;
+/// <summary>
+/// aaa
+/// </summary>
 
 String ConvertBack(byte[] inp) => new String(inp.Select(c => (char)Convert.ToChar(c)).ToArray());
 byte[] ConvertToByte(String inp) => inp.Select(c => (byte)c).ToArray();
@@ -32,10 +36,6 @@ MethodInvoker(new List<Func<int, int, Tuple<string, int>>>()
     {
         return Tuple.Create("Menha ",a - b);
     }),
-    new Func<int, int, int>((int a, int b) =>
-    {
-        return (int)Math.Pow(a, b);
-    })
 }, a, b);
 
 void MethodInvoker(List<Func<int, int, Tuple<string, int>>> methods, int inp1, int inp2)
