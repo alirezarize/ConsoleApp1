@@ -28,12 +28,28 @@ MethodInvoker(new List<Func<int, int, int>>()
     {
         return a - b;
     }),
+    new Func<int, int, int>((int a, int b) =>
+    {
+        return (int)Math.Pow(a, b);
+    })
 }, a, b);
 
 void MethodInvoker(List<Func<int, int, int>> methods, int inp1, int inp2)
 {
     foreach(var method in methods)
         Console.WriteLine(method(inp1, inp2));
+}
+
+public abstract class Mathmatics
+{
+    public abstract float Process(int a, int b);
+}
+public class Sum : Mathmatics
+{
+    public override float Process(int a, int b)
+    {
+
+    }
 }
 
 class Student
