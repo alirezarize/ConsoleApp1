@@ -4,6 +4,7 @@
 using System.Diagnostics;
 
 void Sum(int a, int b) => Console.WriteLine(a+b);
+void Zarb(int a, int b) => Console.WriteLine(a*b);
 
 String ConvertBack(byte[] inp) => new String(inp.Select(c => (char)Convert.ToChar(c)).ToArray());
 byte[] ConvertToByte(String inp) => inp.Select(c=>(byte)c).ToArray();
@@ -13,11 +14,12 @@ int.TryParse(Console.ReadLine(), out a);
 int.TryParse(Console.ReadLine(), out b);
 
 Sum(a, b);
+Console.WriteLine("_________________");
+Zarb(a, b);
 
 class Student
 {
     public int Id { get; private set; }
-    public String Username { get; set; }
-    public UInt32 PPP { get; set; }
+    public  string Username { get; set; }
 
 }
