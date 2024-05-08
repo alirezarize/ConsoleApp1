@@ -48,7 +48,14 @@ public class Sum : Mathmatics
 {
     public override float Process(int a, int b)
     {
-
+        return a + b;
+    }
+}
+public class Multiplication : Mathmatics
+{
+    public override float Process(int a, int b)
+    {
+        return a * b;
     }
 }
 
