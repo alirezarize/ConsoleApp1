@@ -4,35 +4,39 @@
 using System.Diagnostics;
 
 String ConvertBack(byte[] inp) => new String(inp.Select(c => (char)Convert.ToChar(c)).ToArray());
-byte[] ConvertToByte(String inp) => inp.Select(c=>(byte)c).ToArray();
+byte[] ConvertToByte(String inp) => inp.Select(c => (byte)c).ToArray();
 
 int a = 0, b = 0;
+
+Console.Write("First Number : ");
 int.TryParse(Console.ReadLine(), out a);
+
+Console.Write("Second Number : ");
 int.TryParse(Console.ReadLine(), out b);
 
-MethodInvoker(new List<Func<int, int, int>>()
+MethodInvoker(new List<Func<int, int, Tuple<string, int>>>()
 {
-    new Func<int, int, int>((int a, int b) =>
+    new Func<int, int, Tuple<string,int>>((int a, int b) =>
     {
-        return a * b;
+        return Tuple.Create("Zarb",a * b);
     }),
-    new Func<int, int, int>((int a, int b) =>
+    new Func<int, int, Tuple<string,int>>((int a, int b) =>
     {
-        return a / b;
+        return Tuple.Create("Taghsim ",a / b);
     }),
-    new Func<int, int, int>((int a, int b) =>
+    new Func<int, int,  Tuple<string,int>>((int a, int b) =>
     {
-        return a + b;
+       return Tuple.Create("Plus ",a + b);
     }),
-    new Func<int, int, int>((int a, int b) =>
+    new Func<int, int,  Tuple<string,int>>((int a, int b) =>
     {
-        return a - b;
+        return Tuple.Create("Menha ",a - b);
     }),
 }, a, b);
 
-void MethodInvoker(List<Func<int, int, int>> methods, int inp1, int inp2)
+void MethodInvoker(List<Func<int, int, Tuple<string, int>>> methods, int inp1, int inp2)
 {
-    foreach(var method in methods)
+    foreach (var method in methods)
         Console.WriteLine(method(inp1, inp2));
 }
 
