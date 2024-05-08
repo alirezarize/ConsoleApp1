@@ -40,25 +40,6 @@ void MethodInvoker(List<Func<int, int, int>> methods, int inp1, int inp2)
         Console.WriteLine(method(inp1, inp2));
 }
 
-public abstract class Mathmatics
-{
-    public abstract float Process(int a, int b);
-}
-public class Sum : Mathmatics
-{
-    public override float Process(int a, int b)
-    {
-        return a + b;
-    }
-}
-public class Multiplication : Mathmatics
-{
-    public override float Process(int a, int b)
-    {
-        return a * b;
-    }
-}
-
 class Student
 {
     public int Id { get; private set; }
