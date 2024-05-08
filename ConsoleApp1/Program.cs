@@ -13,3 +13,8 @@ int.TryParse(Console.ReadLine(), out a);
 int.TryParse(Console.ReadLine(), out b);
 
 Sum(a, b);
+
+class Student
+{
+
+}
