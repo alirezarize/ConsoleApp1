@@ -18,5 +18,6 @@ class Student
 {
     public int Id { get; private set; }
     public String Username { get; set; }
+    public UInt32 PPP { get; set; }
 
 }
