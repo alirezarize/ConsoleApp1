@@ -16,5 +16,6 @@ Sum(a, b);
 
 class Student
 {
+    public int Id { get; private set; }
 
 }
